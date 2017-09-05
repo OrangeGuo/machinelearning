@@ -6,4 +6,6 @@ model = linear_model.LinearRegression()
 model.fit([[0, 0], [1, 1], [2, 2]], [0, 1, 2])
 # 第三步：使用该机器模型提供的model.predic()，用于预测
 
-print(model.predict([4, 4]))
+print(model.coef_)
+print(model.intercept_)
+print(model.predict([3, 3]))
