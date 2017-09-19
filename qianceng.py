@@ -5,8 +5,9 @@ import sklearn.datasets
 import sklearn.linear_model
 import matplotlib
 
-np.random.seed(0)
+#np.random.seed(0)
 X, y = sklearn.datasets.make_moons(200, noise=0.20)
+
 plt.scatter(X[:, 0], X[:, 1], s=40, c=y, cmap=plt.cm.Spectral)
 # plt.show()
 
@@ -70,7 +71,7 @@ def build_model(nn_hdim, num_passes=20000, print_loss=False):
     b2 = np.zeros((nn_output_dim, 1))
     model = {}
 
-    for i in range(0, num_passes):
+    for i in xrange(0, num_passes):
 
         # Forward propagation
         z2 = W1.dot(X.T) + b1
