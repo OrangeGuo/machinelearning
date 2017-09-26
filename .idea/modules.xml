@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/machine learning.iml" filepath="$PROJECT_DIR$/.idea/machine learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../matplotlib/.idea/matplotlib.iml" filepath="$PROJECT_DIR$/../matplotlib/.idea/matplotlib.iml" />
     </modules>
   </component>
 </project>
