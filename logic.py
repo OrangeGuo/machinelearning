@@ -1,44 +1,4 @@
-# import numpy as np
-# import math
-#
-# np.random.seed(0)
-#
-# def getMatrix(row, col):
-#     return np.random.random((row, col))
-#
-# def sigmoid(x):
-#     return math.tanh(x)
-#
-# def dsigmoid(y):
-#     return 1.0 - y**2
-#
-# class Net:
-#     def __init__(self, input_layers, hidden_layers, _output_layers):
-#         self.input_layers = input_layers + 1
-#         self.hidden_layers = hidden_layers
-#         self.output_layers = _output_layers
-#
-#         self.ainput_layers = [1.0] * self.input_layers
-#         self.ahidden_layers = [1.0] * self.hidden_layers
-#         self.aoutput_layers = [1.0] * self.output_layers
-#
-#         self.weights_input = getMatrix(self.input_layers, self.hidden_layers)
-#         self.weights_output = getMatrix(self.hidden_layers, self.output_layers)
-#
-#         self.c_input = getMatrix(self.input_layers, self.hidden_layers)
-#         self.c_output = getMatrix(self.hidden_layers, self.output_layers)
-#
-#     def update(self, inputs):
-#         if len(inputs) != self.input_layers - 1:
-#             raise ValueError('input error!')
-#         for i in range(self.input_layers-1):
-#              self.ainput_layers[i] = inputs[i]
-#         self.ahidden_layers = sigmoid(np.dot(self.ainput_layers, self.weights_input))
-#         self.aoutput_layers = sigmoid(np.dot(self.ahidden_layers, self.weights_output))
-#
-#         return  self.aoutput_layers
-#
-#     def backPropagate(self, targets, ):
+
 import math
 import random
 import string
@@ -56,8 +16,6 @@ def makeMatrix(I, J, fill=0.0):
         m.append([fill] * J)
     return m
 
-#  def makeMatrix(row, col):
-#     return random.random((row, col))
 
 def sigmoid(x):
     return math.tanh(x)
@@ -173,15 +131,14 @@ class NN:
 
 def demo():
     pat = [
-        [0, 0],
-        [0, 1],
-        [1, 0],
-        [1, 1]
+        [[0,0], [0]],
+        [[0,1], [1]],
+        [[1,0], [1]],
+        [[1,1], [0]]
     ]
-    target =[[0,1,1,0]].T
     n = NN(2, 2, 1)
     n.train(pat)
-    n.test(target)
+    n.test(pat)
     # n.weights()
 
 
