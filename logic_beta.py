@@ -1,6 +1,6 @@
 import numpy as np
 import math
-import  random
+import matplotlib.pyplot as plt
 np.random.seed(0)
 
 def getMatrix(row, col):
@@ -11,7 +11,7 @@ def sigmoid(x):
 
 def dsigmoid(y):
     return 1.0 - y**2
-
+list = []
 class Net:
     def __init__(self, input_layers, hidden_layers, _output_layers):
         self.input_layers = input_layers + 1
@@ -99,9 +99,15 @@ class Net:
             error += self.backPropagate(results, output,N,M)
             # break
             if i%100 == 0:
-                print('error %-.5f' % error)
+                list.append(error)
+                # print('error %-.5f' % error)
     def  predict(self,input):
-        print self.update(inputs=input)
+        # print self.update(inputs=input)
+        output = self.update(input).reshape(4)
+        plt.figure('predict')
+        plt.bar(range(len(output)),output)
+        plt.title('forecast value')
+        # plt.show()
 
 sample = [[0,0],
                    [0,1],
@@ -112,3 +118,7 @@ net = Net(2,2,1)
 # print type(sample)
 net.train(sample, result)
 net.predict(sample)
+plt.figure('train')
+plt.bar(range(len(list)-2),list[2:])
+plt.title('Gradient Descent')
+plt.show()
