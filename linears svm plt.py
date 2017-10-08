@@ -10,7 +10,8 @@ clf = svm.SVC(kernel='linear')
 clf.fit(x,y)
 w = clf.coef_[0] #faxiangliang
 a = -w[0]/w[1]
-xx = np.linspace(-5,5)
+# xx = np.linspace(-5,5,2)
+xx = np.r_[-5. ,5.]
 yy = a*xx-(clf.intercept_[0])/w[1]
 b = clf.support_vectors_[0]
 yy_down = a*xx + (b[1]-a*b[0])
