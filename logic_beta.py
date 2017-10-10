@@ -114,11 +114,11 @@ sample = [[0,0],
                    [1,0],
                    [1,1]]
 result = [[0,1,1,0]]
-net = Net(2,2,1)
+net = Net(2,4,1)
 # print type(sample)
 net.train(sample, result)
 net.predict(sample)
 plt.figure('train')
-plt.bar(range(len(list)-2),list[2:])
+plt.bar(range(len(list)-1),list[1:])
 plt.title('Gradient Descent')
 plt.show()
