@@ -1,8 +1,11 @@
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+import sklearn.datasets
 np.random.seed(0)
 
+sample_num = 4
+neural_num = 9
 def getMatrix(row, col):
     return np.random.random((row, col))
 
@@ -18,7 +21,7 @@ class Net:
         self.hidden_layers = hidden_layers
         self.output_layers = _output_layers
 
-        self.ainput_layers = np.zeros((4,self.input_layers))
+        self.ainput_layers = np.zeros((sample_num,self.input_layers))
 
         self.weights_input = getMatrix(self.input_layers, self.hidden_layers)
         self.weights_output = getMatrix(self.hidden_layers, self.output_layers)
@@ -53,14 +56,14 @@ class Net:
         return  self.aoutput_layers
 
     def backPropagate(self, targets, output, N, M):
-        output_delta = np.zeros((4,1))
+        output_delta = np.zeros((sample_num,1))
 
         for i in range(len(targets[0])):
             output_delta[i][0] = dsigmoid(output[i][0])*(targets[0][i] - output[i][0])
         # print targets
         # print output
         # print output_delta
-        for s in range(4):
+        for s in range(sample_num):
             hidden_delta = np.zeros((1, self.hidden_layers))
             for i in range(self.hidden_layers):
                 error = 0.0
@@ -103,7 +106,7 @@ class Net:
                 # print('error %-.5f' % error)
     def  predict(self,input):
         # print self.update(inputs=input)
-        output = self.update(input).reshape(4)
+        output = self.update(input).reshape(sample_num)
         plt.figure('predict')
         plt.bar(range(len(output)),output)
         plt.title('forecast value')
@@ -114,11 +117,12 @@ sample = [[0,0],
                    [1,0],
                    [1,1]]
 result = [[0,1,1,0]]
-net = Net(2,4,1)
+# sample,result = sklearn.datasets.make_moons(sample_num, noise=0.20)
+net = Net(2,neural_num,1)
 # print type(sample)
 net.train(sample, result)
 net.predict(sample)
 plt.figure('train')
-plt.bar(range(len(list)-1),list[1:])
+plt.bar(range(len(list)),list)
 plt.title('Gradient Descent')
 plt.show()
