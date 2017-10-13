@@ -6,7 +6,6 @@ input_layers_num = 2
 hidden_layers_num = 4
 output_layers_num = 1
 sample_num = 4
-
 # X = np.array([[0, 0, 1], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
 # y = np.array([[0, 1, 1, 0]]).T
 np.random.seed(0)
