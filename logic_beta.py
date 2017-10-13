@@ -5,7 +5,7 @@ import sklearn.datasets
 np.random.seed(0)
 
 sample_num = 4
-neural_num = 9
+neural_num = 3
 def getMatrix(row, col):
     return np.random.random((row, col))
 
@@ -89,6 +89,7 @@ class Net:
         error = 0.0
         for k in range(len(targets[0])):
             error += 0.5*(targets[0][k] - self.aoutput_layers[k][0])**2
+            # error += math.fabs(targets[0][k]-round(self.aoutput_layers[k][0],0))
         return error
     def weights(self):
         print 'weight_input:'
@@ -105,7 +106,6 @@ class Net:
                 list.append(error)
                 # print('error %-.5f' % error)
     def  predict(self,input):
-        # print self.update(inputs=input)
         output = self.update(input).reshape(sample_num)
         plt.figure('predict')
         plt.bar(range(len(output)),output)
@@ -116,13 +116,13 @@ sample = [[0,0],
                    [0,1],
                    [1,0],
                    [1,1]]
-result = [[0,1,1,0]]
+result = [0,1,1,0]
 # sample,result = sklearn.datasets.make_moons(sample_num, noise=0.20)
 net = Net(2,neural_num,1)
 # print type(sample)
-net.train(sample, result)
+net.train(sample, [result])
 net.predict(sample)
 plt.figure('train')
-plt.bar(range(len(list)),list)
+plt.bar(range(len(list)-1),list[1:])
 plt.title('Gradient Descent')
 plt.show()
