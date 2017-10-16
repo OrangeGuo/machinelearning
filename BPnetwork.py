@@ -3,9 +3,9 @@ import sklearn.datasets
 import matplotlib.pyplot as plt
 
 input_layers_num = 2
-hidden_layers_num = 4
+hidden_layers_num = 8
 output_layers_num = 2
-sample_num = 6
+sample_num = 200
 epsilion = 0.01
 reg_lambda = 0.01
 # X = np.array([[0, 0, 1], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
@@ -23,8 +23,9 @@ def net_init():
     net = {'sample':sample,'result':result,'W1':W1,'W2':W2,'b1':b1,'b2':b2}
     return net
 
-def train(net,loops=10000):
+def train(net,loops=20000):
     sample,result,W1,W2,b1,b2 = net['sample'],net['result'],net['W1'],net['W2'],net['b1'],net['b2']
+    axis = []
     for i in range(loops):
         z2 = W1.dot(sample.T)+b1
         a2 = np.tanh(z2)
@@ -51,6 +52,9 @@ def train(net,loops=10000):
         net = {'sample': sample, 'result': result, 'W1': W1, 'W2': W2, 'b1': b1, 'b2': b2}
         if i % 1000 == 0:
             print("loss after iteration %i: %f" % (i, loss_function(net)))
+            axis.append(loss_function(net))
+    plt.figure('Gradient Desent')
+    plt.bar(range(len(axis)),axis)
     return net
 
 def loss_function(net):
@@ -66,16 +70,23 @@ def loss_function(net):
     return 1.0 / sample_num * data_loss
 
 def predict(net):
-    sample,W1,W2,b1,b2 =net['sample'], net['W1'],net['W2'],net['b1'],net['b2']
+    sample,result,W1,W2,b1,b2 =net['sample'],net['result'],net['W1'],net['W2'],net['b1'],net['b2']
     z2 = W1.dot(sample.T)+b1
     a2 = np.tanh(z2)
     z3 = W2.dot(a2)+b2
     exp_scores = np.exp(z3)
     probs =exp_scores/ np.sum(exp_scores,axis=0,keepdims=True)
+    s = np.argmax(probs,axis=0)
+    for j in range(sample_num):
+        if(s[j] != result[j]):
+            s[j] = -1
+    plt.figure('Predict')
+    plt.scatter(sample[:,0],sample[:,1],c=s)
+    plt.show()
     return np.argmax(probs, axis=0)
 
 net = net_init()
-output = train(net,1)
+output = train(net)
 predict(net)
 # plt.figure('predict')
 # plt.bar(range(len(output)),output)
