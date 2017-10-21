@@ -55,6 +55,10 @@ def train(net,loops=20000):
             axis.append(loss_function(net))
     plt.figure('Gradient Desent')
     plt.bar(range(len(axis)),axis)
+    with open('/home/orange/Workspaces/MyEclipse 2015/SoftwareReliabilityTest/b.txt','w') as file:
+        s= '\t\r'.join(str(i) for i in axis)
+        file.write(s)
+        file.close()
     return net
 
 def loss_function(net):
