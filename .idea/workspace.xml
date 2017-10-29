@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6d596aa-f549-4b15-ae19-1ab6c9c2dd74" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Models/EML.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN.py" afterPath="$PROJECT_DIR$/RNN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/EML.py" afterPath="$PROJECT_DIR$/Models/EML.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../matplotlib/demo1.py" afterPath="$PROJECT_DIR$/../matplotlib/demo1.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +15,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/machinelearning$bpmodel3.coverage" NAME="bpmodel3 Coverage Results" MODIFIED="1506247049728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/machinelearning$logic.coverage" NAME="logic Coverage Results" MODIFIED="1506688074290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/machinelearning$EML.coverage" NAME="EML Coverage Results" MODIFIED="1509192384391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
+    <SUITE FILE_PATH="coverage/machinelearning$EML.coverage" NAME="EML Coverage Results" MODIFIED="1509247882908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
     <SUITE FILE_PATH="coverage/machine_learning$example.coverage" NAME="example Coverage Results" MODIFIED="1501861738797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/machinelearning$linear_svm.coverage" NAME="linear svm Coverage Results" MODIFIED="1507444881892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/machinelearning$guangbo.coverage" NAME="guangbo Coverage Results" MODIFIED="1506755369317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -39,8 +37,8 @@
       <file leaf-file-name="BPnetwork.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BPnetwork.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-101">
-              <caret line="27" column="13" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="51" selection-end-column="90" />
+            <state relative-caret-position="155">
+              <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -51,7 +49,7 @@
       <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="499">
               <caret line="76" column="65" lean-forward="false" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="68" />
               <folding>
                 <element signature="e#14#28#0" expanded="true" />
@@ -63,8 +61,8 @@
       <file leaf-file-name="EML.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Models/EML.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+            <state relative-caret-position="199">
+              <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
@@ -72,10 +70,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ELM.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/ELM.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2790">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="logic_beta.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logic_beta.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2839">
+            <state relative-caret-position="3210">
               <caret line="110" column="28" lean-forward="false" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
               <folding />
             </state>
@@ -85,7 +93,7 @@
       <file leaf-file-name="qianceng.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qianceng.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-281">
+            <state relative-caret-position="1830">
               <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="37" />
               <folding />
             </state>
@@ -143,7 +151,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="259" />
     <option name="y" value="6" />
     <option name="width" value="1400" />
@@ -189,6 +197,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,7 +222,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -582,16 +590,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="259" y="6" width="1922" height="1092" extended-state="7" />
-    <editor active="true" />
+    <frame x="-1" y="-4" width="1922" height="1085" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3792049" sideWeight="0.553125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3792049" sideWeight="0.5552083" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3792049" sideWeight="0.446875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3792049" sideWeight="0.44479167" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -634,13 +641,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bpmodel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -898,7 +898,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logic_beta.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
+        <state relative-caret-position="3210">
           <caret line="110" column="28" lean-forward="false" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
           <folding />
         </state>
@@ -906,15 +906,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/qianceng.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-281">
+        <state relative-caret-position="1830">
           <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Models/BPnet.py" />
+    <entry file="file://$PROJECT_DIR$/BPnetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="499">
           <caret line="76" column="65" lean-forward="false" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="68" />
           <folding>
             <element signature="e#14#28#0" expanded="true" />
@@ -922,19 +933,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BPnetwork.py">
+    <entry file="file://$PROJECT_DIR$/Models/ELM.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-101">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="51" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/BPnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-2790">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -942,8 +943,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/EML.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        <state relative-caret-position="199">
+          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
           <folding>
             <element signature="e#1#20#0" expanded="true" />
           </folding>
