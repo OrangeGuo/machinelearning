@@ -1,37 +1,10 @@
 #coding:utf-8
 import  string
-
-# X = [1, 2]
-# state = [0.0, 0.0]
-# # 分开定义不同输入部分的权重方便操作
-# w_cell_state = np.asarray([[0.1, 0.2], [0.3, 0.4]])
-# w_cell_input = np.asarray([0.5, 0.6])
-# b_cell = np.asarray([0.1, -0.1])
-#
-# # 定义用于输出的全连接层参数
-# w_output = np.asarray([[1.0], [2.0]])
-# b_output = 0.1
-#
-# # 按照时间顺序执行循环神经网络的前向传播过程
-# for i in range(len(X)):
-#     # 计算循环体中的全连接层神经网络
-#     before_activation = np.dot(state, w_cell_state) + X[i] * w_cell_input + b_cell
-#     state = np.tanh(before_activation)
-#     # 根据当前时刻状态计算最终输出
-#     final_output = np.dot(state, w_output) + b_output
-#     print("output: h", i, final_output)
 import numpy as np
 import sklearn.datasets
 import matplotlib.pyplot as plt
-import  math
-input_layers_num = 1
-hidden_layers_num = 1
-output_layers_num = 1
-sample_num = 1
 epsilion = 0.01
 reg_lambda = 0.01
-# X = np.array([[0, 0, 1], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
-# y = np.array([[0, 1, 1, 0]]).T
 np.random.seed(0)
 
 X = []
@@ -74,7 +47,7 @@ def train(net,loops=2):
         z3  = W2.dot(l2)
         print z3
         # exp_scores = np.exp(z3)
-        # probs = exp_scores/np.sum(exp_scores,axis=0,keepdims=True)
+        # probs = exp_scores/
         #
         # delta3 = probs
         # delta3[result,range(sample_num)]-=1
@@ -141,7 +114,28 @@ def predict(net):
 # net = net_init()
 # output = train(net)
 # predict(net)
-print X
+
 # print X
 # sample, result = sklearn.datasets.make_moons(sample_num, noise=0.20)
 # print result
+input_layers_num = 1
+hidden_layers_num = 5
+output_layers_num = 1
+X = []
+y = []
+loop = 0
+temp = 0.0
+index = 0.0
+for line in open('/home/orange/Workspaces/MyEclipse 2015/SoftwareReliabilityTest/data/CSR3.DAT'):
+    s = line.strip().split()
+    if s :
+        loop+=1
+        temp += string.atof(s[0])
+        index += string.atof(s[1])
+        X.append(np.array([temp]))
+        y.append(index)
+X = np.array(X)
+y = np.array(y)
+y =np.array([y]).T
+input_weights = 2*np.random.random((input_layers_num,hidden_layers_num)) - 1
+print X
