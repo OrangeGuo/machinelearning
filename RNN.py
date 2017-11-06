@@ -5,8 +5,8 @@ import numpy as np
 import sklearn.datasets
 import math
 
-epsilion = 0.01
-reg_lambda = 0.01
+epsilion = 0.03
+reg_lambda = 0.02
 np.random.seed(0)
 
 input_layers = 1
@@ -22,7 +22,7 @@ for line in open('/home/orange/Workspaces/MyEclipse 2015/SoftwareReliabilityTest
     s = line.strip().split()
     if s:
         loop += 1
-        temp += string.atof(s[0])
+        temp = string.atof(s[0])
         index += string.atof(s[1])
         X.append(np.array([temp]))
         y.append(index)
@@ -53,46 +53,47 @@ def net_init():
 def train(net):
     sample, result, W1, W2, b1, b2, S, H= net['sample'], net['result'], net['W1'], net['W2'], net['b1'], net['b2'],net['S'],net['H']
     for i in range(loop):
-        z2 = W1*X[i][0]+ b1+H.dot(S)
-        S =  z2
-        a2 = np.tanh(z2)
-        z3 = W2.dot(a2) + b2
-        exp_scores = np.exp(z3)
+        for j in range(16):
+            z2 = W1*X[i][0]+ b1+H.dot(S)
+            S =  z2
+            a2 = np.tanh(z2)
+            z3 = W2.dot(a2) + b2
+            exp_scores = np.exp(z3)
 
-        delta3 = exp_scores - result[i]
-        # delta3[result,range(sample_num)]-=1
-        # print delta3[result,range(sample_num)]-2
-        dW2 = delta3.dot(a2.T)
-        db2 = np.sum(delta3, axis=1, keepdims=True)
-        delta2 = W2.T.dot(delta3) * (1 - np.power(a2, 2))
-        dW1 = delta2*X[i][0]
-        dH = delta2.dot(S.T)
-        db1 = np.sum(delta2, axis=1, keepdims=True)
+            delta3 = exp_scores - result[i]
+            # delta3[result,range(sample_num)]-=1
+            # print delta3[result,range(sample_num)]-2
+            dW2 = delta3.dot(a2.T)
+            db2 = np.sum(delta3, axis=1, keepdims=True)
+            delta2 = W2.T.dot(delta3) * (1 - np.power(a2, 2))
+            dW1 = delta2*X[i][0]
+            dH = delta2.dot(S.T)
+            db1 = np.sum(delta2, axis=1, keepdims=True)
 
-        dW2 += reg_lambda * W2
-        dW1 += reg_lambda * W1
-        dH += reg_lambda * H
+            dW2 += reg_lambda * W2
+            dW1 += reg_lambda * W1
+            dH += reg_lambda * H
 
-        W1 += -epsilion * dW1
-        W2 += -epsilion * dW2
-        H += -epsilion * dH
-        b1 += -epsilion * db1
-        b2 += -epsilion * db2
-        net = {'sample': sample, 'result': result, 'W1': W1, 'W2': W2, 'b1': b1, 'b2': b2,'H':H,'S':S}
+            W1 += -epsilion * dW1
+            W2 += -epsilion * dW2
+            H += -epsilion * dH
+            b1 += -epsilion * db1
+            b2 += -epsilion * db2
+            net = {'sample': sample, 'result': result, 'W1': W1, 'W2': W2, 'b1': b1, 'b2': b2,'H':H,'S':S}
 
     return net
 
 
 def predict(net):
     sample, result, W1, W2, b1, b2,S,H = net['sample'], net['result'], net['W1'], net['W2'], net['b1'], net['b2'],net['S'],net['H']
-    for i in range(loop):
-        z2 = W1.dot(sample[i][0]) + b1,
-        a2 = np.tanh(z2)
-        z3 = W2.dot(a2) + b2
-        exp_scores = np.exp(z3)
-        exp_scores = exp_scores * (y_max - y_min) + y_min
-        print exp_scores
-
+    z2 = W1.dot(1+loop) + H.dot(S)+ b1,
+    a2 = np.tanh(z2)
+    z3 = W2.dot(a2) + b2
+    exp_scores = np.exp(z3)
+    exp_scores = exp_scores * (y_max - y_min) + y_min
+    print exp_scores
+    print loop
+    print y[loop-1]
     # print exp_scores
     # with open('data/BPnetwork.txt', 'w') as file:
     #     # s = '\t\r'.join(str(i) for i in (y))
