@@ -12,17 +12,19 @@ np.random.seed(0)
 input_layers = 1
 hidden_layers = 5
 output_layers = 1
+time_predict = 20
 X = []
 y = []
 loop = 0
 temp = 0.0
 index = 0.0
-# path = 'data/' + str(sys.argv[1])
-for line in open('/home/orange/Workspaces/MyEclipse 2015/SoftwareReliabilityTest/data/CSR3.DAT'):
+path = 'data/' + str(sys.argv[1])
+# for line in open('/home/orange/Workspaces/MyEclipse 2015/SoftwareReliabilityTest/data/CSR3.DAT'):
+for line in open(path):
     s = line.strip().split()
     if s:
         loop += 1
-        temp = string.atof(s[0])
+        temp += string.atof(s[0])
         index += string.atof(s[1])
         X.append(np.array([temp]))
         y.append(index)
@@ -61,7 +63,6 @@ def train(net):
             a2 = np.tanh(z2)
             z3 = W2.dot(a2) + b2
             exp_scores = np.exp(z3)
-
             delta3 = exp_scores - result[i]
             # delta3[result,range(sample_num)]-=1
             # print delta3[result,range(sample_num)]-2
@@ -87,25 +88,27 @@ def train(net):
 
 
 def predict(net):
-    temp = np.zeros((1,1))
-    temp[0][0]=2
     sample, result, W1, W2, b1, b2,S,H = net['sample'], net['result'], net['W1'], net['W2'], net['b1'], net['b2'],net['S'],net['H']
-    z2 = W1.dot(temp) + H.dot(S)+ b1,
-    a2 = np.tanh(z2)
-    z3 = W2.dot(a2) + b2
-    exp_scores = np.exp(z3)
-    exp_scores = exp_scores * (y_max - y_min) + y_min
-    print exp_scores
-    print y[loop-1]
-    # print exp_scores
-    # with open('data/BPnetwork.txt', 'w') as file:
-    #     # s = '\t\r'.join(str(i) for i in (y))
-    #     # file.write(s)
-    #     # file.write('\r')
-    #     s = '\t\r'.join(str(i) for i in (np.array(exp_scores[0])))
-    #     file.write(s)
-    #     file.close()
+    predicts = []
+    temp = X[loop-1][0]
+    for i in range(time_predict):
+	temp = temp + loop + i + 1
+        z2 = W1.dot((temp-X_min)/(X_max-X_min)) + H.dot(S)+ b1,
+        a2 = np.tanh(z2)
+        z3 = W2.dot(a2) + b2
+        exp_scores = np.exp(z3)
+        exp_scores = exp_scores * (y_max - y_min) + y_min
+        predicts.append(exp_scores.reshape(1))
+    predicts = np.array(predicts).reshape(time_predict)
+    with open('BPnetwork.txt', 'w') as file:
+        s = '\t\r'.join(str(i) for i in (y))
+        file.write(s)
+        file.write('\r')
+        s = '\t\r'.join(str(i) for i in (predicts))
+        file.write(s)
+        file.close()
         # print exp_scores
+
 
 net = net_init()
 output = train(net)
