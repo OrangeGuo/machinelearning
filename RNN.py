@@ -53,8 +53,10 @@ def net_init():
 def train(net):
     sample, result, W1, W2, b1, b2, S, H= net['sample'], net['result'], net['W1'], net['W2'], net['b1'], net['b2'],net['S'],net['H']
     for i in range(loop):
-        for j in range(16):
-            z2 = W1*X[i][0]+ b1+H.dot(S)
+    	temp = np.zeros((1,1))
+    	temp[0][0]=sample[i][0]
+        for j in range(20):
+            z2 = W1*temp.T+ b1+H.dot(S)
             S =  z2
             a2 = np.tanh(z2)
             z3 = W2.dot(a2) + b2
@@ -66,7 +68,7 @@ def train(net):
             dW2 = delta3.dot(a2.T)
             db2 = np.sum(delta3, axis=1, keepdims=True)
             delta2 = W2.T.dot(delta3) * (1 - np.power(a2, 2))
-            dW1 = delta2*X[i][0]
+            dW1 = delta2*temp
             dH = delta2.dot(S.T)
             db1 = np.sum(delta2, axis=1, keepdims=True)
 
@@ -85,14 +87,15 @@ def train(net):
 
 
 def predict(net):
+    temp = np.zeros((1,1))
+    temp[0][0]=2
     sample, result, W1, W2, b1, b2,S,H = net['sample'], net['result'], net['W1'], net['W2'], net['b1'], net['b2'],net['S'],net['H']
-    z2 = W1.dot(1+loop) + H.dot(S)+ b1,
+    z2 = W1.dot(temp) + H.dot(S)+ b1,
     a2 = np.tanh(z2)
     z3 = W2.dot(a2) + b2
     exp_scores = np.exp(z3)
     exp_scores = exp_scores * (y_max - y_min) + y_min
     print exp_scores
-    print loop
     print y[loop-1]
     # print exp_scores
     # with open('data/BPnetwork.txt', 'w') as file:
